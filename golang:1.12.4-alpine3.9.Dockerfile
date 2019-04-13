@@ -1,4 +1,4 @@
-FROM golang:1.12.3-alpine3.9
+FROM golang:1.12.4-alpine3.9
 
 RUN apk add --update --no-cache git build-base cmake
 
