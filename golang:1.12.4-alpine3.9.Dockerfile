@@ -1,10 +1,7 @@
 FROM golang:1.12.4-alpine3.9
 
-RUN apk add --update --no-cache git build-base cmake
+RUN apk --no-cache add git build-base
 
-RUN git clone --depth 1 --branch v1.0.7 https://github.com/google/brotli && \
-        cd brotli && \
-        cmake . && \
-        make install && \
-        cd .. && \
-        rm -rf brotli
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN apk --no-cache add brotli-dev
+
