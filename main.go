@@ -60,5 +60,5 @@ type build struct {
 type step struct {
 	Name    string
 	Args    []string `yaml:",flow"`
-	WaitFor []string `yaml:",flow"`
+	WaitFor []string `yaml:"waitFor,flow"`
 }
