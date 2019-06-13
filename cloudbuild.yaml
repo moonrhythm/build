@@ -1,15 +1,41 @@
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: [build, -t, gcr.io/$PROJECT_ID/golang:1.12.4-alpine3.9, -f, golang:1.12.4-alpine3.9.Dockerfile, '.']
-  waitFor: ['-']
+  args: [build, --pull, -t, gcr.io/$PROJECT_ID/alpine, -f, alpine.Dockerfile, .]
+  waitfor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, -t, gcr.io/$PROJECT_ID/golang:1.12.5-alpine3.9, -f, golang:1.12.5-alpine3.9.Dockerfile, '.']
-  waitFor: ['-']
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/alpine:3.9.4', -f, 'alpine:3.9.4.Dockerfile',
+    .]
+  waitfor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, -t, gcr.io/$PROJECT_ID/alpine:3.9, -f, alpine:3.9.Dockerfile, '.']
-  waitFor: ['-']
-
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/alpine:3.9', -f, 'alpine:3.9.Dockerfile',
+    .]
+  waitfor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:1.12.4-alpine3.9', -f, 'golang:1.12.4-alpine3.9.Dockerfile',
+    .]
+  waitfor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:1.12.5-alpine3.9', -f, 'golang:1.12.5-alpine3.9.Dockerfile',
+    .]
+  waitfor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:1.12.6-alpine3.9', -f, 'golang:1.12.6-alpine3.9.Dockerfile',
+    .]
+  waitfor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:alpine', -f, 'golang:alpine.Dockerfile',
+    .]
+  waitfor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:alpine3.9', -f, 'golang:alpine3.9.Dockerfile',
+    .]
+  waitfor: ['-']
 images:
+- gcr.io/$PROJECT_ID/alpine
+- gcr.io/$PROJECT_ID/alpine:3.9.4
+- gcr.io/$PROJECT_ID/alpine:3.9
 - gcr.io/$PROJECT_ID/golang:1.12.4-alpine3.9
 - gcr.io/$PROJECT_ID/golang:1.12.5-alpine3.9
-- gcr.io/$PROJECT_ID/alpine:3.9
+- gcr.io/$PROJECT_ID/golang:1.12.6-alpine3.9
+- gcr.io/$PROJECT_ID/golang:alpine
+- gcr.io/$PROJECT_ID/golang:alpine3.9
