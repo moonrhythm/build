@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM golang:alpine3.9
 
 RUN apk --no-cache add git build-base
 
