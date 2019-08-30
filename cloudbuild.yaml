@@ -3,7 +3,7 @@ steps:
   args: [build, --pull, -t, gcr.io/$PROJECT_ID/alpine, -f, alpine.Dockerfile, .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/alpine:3.10.1', -f, 'alpine:3.10.1.Dockerfile',
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/alpine:3.10.2', -f, 'alpine:3.10.2.Dockerfile',
     .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
@@ -24,7 +24,7 @@ steps:
   waitFor: ['-']
 images:
 - gcr.io/$PROJECT_ID/alpine
-- gcr.io/$PROJECT_ID/alpine:3.10.1
+- gcr.io/$PROJECT_ID/alpine:3.10.2
 - gcr.io/$PROJECT_ID/alpine:3.10
 - gcr.io/$PROJECT_ID/golang:1.12.9-alpine3.10
 - gcr.io/$PROJECT_ID/golang:alpine
