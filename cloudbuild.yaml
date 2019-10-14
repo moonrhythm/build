@@ -26,6 +26,10 @@ steps:
   args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/golang:alpine3.10', -f, 'golang:alpine3.10.Dockerfile',
     .]
   waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/$PROJECT_ID/php:7.3.10-fpm-alpine', -f, 'php:7.3.10-fpm-alpine.Dockerfile',
+    .]
+  waitFor: ['-']
 images:
 - gcr.io/$PROJECT_ID/alpine
 - gcr.io/$PROJECT_ID/alpine:3.10.2
@@ -34,3 +38,4 @@ images:
 - gcr.io/$PROJECT_ID/golang:1.13.1-alpine3.10
 - gcr.io/$PROJECT_ID/golang:alpine
 - gcr.io/$PROJECT_ID/golang:alpine3.10
+- gcr.io/$PROJECT_ID/php:7.3.10-fpm-alpine
