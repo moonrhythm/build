@@ -9,6 +9,8 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
+const projectID = "moonrhythm-containers"
+
 func main() {
 	files, err := ioutil.ReadDir(".")
 	if err != nil {
@@ -27,7 +29,7 @@ func main() {
 			continue
 		}
 
-		img := "gcr.io/$PROJECT_ID/" + name
+		img := "gcr.io/" + projectID + "/" + name
 		build.Steps = append(build.Steps, &step{
 			Name:    "gcr.io/cloud-builders/docker",
 			Args:    []string{"build", "--pull", "-t", img, "-f", fname, "."},
