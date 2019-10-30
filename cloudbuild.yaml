@@ -4,7 +4,7 @@ steps:
     .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.10.2', -f, 'alpine:3.10.2.Dockerfile',
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.10.3', -f, 'alpine:3.10.3.Dockerfile',
     .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
@@ -45,7 +45,7 @@ steps:
   waitFor: ['-']
 images:
 - gcr.io/moonrhythm-containers/alpine
-- gcr.io/moonrhythm-containers/alpine:3.10.2
+- gcr.io/moonrhythm-containers/alpine:3.10.3
 - gcr.io/moonrhythm-containers/alpine:3.10
 - gcr.io/moonrhythm-containers/filebrowser:v2.0.14
 - gcr.io/moonrhythm-containers/golang:1.12-alpine
