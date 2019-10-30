@@ -1,4 +1,4 @@
-FROM php:7.3.10-fpm-alpine
+FROM php:7.3.11-fpm-alpine
 
 # copy from wordpress dockerfile
 
