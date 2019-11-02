@@ -24,12 +24,12 @@ steps:
     'golang:1.13-alpine.Dockerfile', .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.13.3-alpine', -f,
-    'golang:1.13.3-alpine.Dockerfile', .]
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.13.4-alpine', -f,
+    'golang:1.13.4-alpine.Dockerfile', .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.13.3-alpine3.10',
-    -f, 'golang:1.13.3-alpine3.10.Dockerfile', .]
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.13.4-alpine3.10',
+    -f, 'golang:1.13.4-alpine3.10.Dockerfile', .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
   args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine', -f, 'golang:alpine.Dockerfile',
@@ -50,8 +50,8 @@ images:
 - gcr.io/moonrhythm-containers/filebrowser:v2.0.14
 - gcr.io/moonrhythm-containers/golang:1.12-alpine
 - gcr.io/moonrhythm-containers/golang:1.13-alpine
-- gcr.io/moonrhythm-containers/golang:1.13.3-alpine
-- gcr.io/moonrhythm-containers/golang:1.13.3-alpine3.10
+- gcr.io/moonrhythm-containers/golang:1.13.4-alpine
+- gcr.io/moonrhythm-containers/golang:1.13.4-alpine3.10
 - gcr.io/moonrhythm-containers/golang:alpine
 - gcr.io/moonrhythm-containers/golang:alpine3.10
 - gcr.io/moonrhythm-containers/php:7.3.11-fpm-alpine
