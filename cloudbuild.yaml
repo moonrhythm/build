@@ -32,8 +32,12 @@ steps:
     'golang:alpine3.10.Dockerfile', .]
   waitFor: ['-']
 - name: gcr.io/cloud-builders/docker
-  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.3.12-fpm-alpine',
-    -f, 'php:7.3.12-fpm-alpine.Dockerfile', .]
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.3.13-apache', -f,
+    'php:7.3.13-apache.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.3.13-fpm-alpine',
+    -f, 'php:7.3.13-fpm-alpine.Dockerfile', .]
   waitFor: ['-']
 images:
 - gcr.io/moonrhythm-containers/alpine
@@ -44,4 +48,5 @@ images:
 - gcr.io/moonrhythm-containers/golang:1.13.5-alpine3.10
 - gcr.io/moonrhythm-containers/golang:alpine
 - gcr.io/moonrhythm-containers/golang:alpine3.10
-- gcr.io/moonrhythm-containers/php:7.3.12-fpm-alpine
+- gcr.io/moonrhythm-containers/php:7.3.13-apache
+- gcr.io/moonrhythm-containers/php:7.3.13-fpm-alpine
