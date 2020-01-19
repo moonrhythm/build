@@ -94,6 +94,21 @@ RUN set -eux; \
 # (replace all instances of "%h" with "%a" in LogFormat)
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 
+# Moon Rhythm Optimization
+
+RUN set -eux; \
+	# lets reverse proxy to handle deflate
+	rm -f /etc/apache2/mods-enabled/deflate.*; \
+	rm -f /etc/apache2/mods-enabled/reqtimeout.*; \
+	# rm -f /etc/apache2/mods-enabled/mpm_prefork.*; \
+	# ln -s /etc/apache2/mods-available/mpm_event.conf /etc/apache2/mods-enabled/mpm_event.conf; \
+	# ln -s /etc/apache2/mods-available/mpm_event.load /etc/apache2/mods-enabled/mpm_event.load; \
+	# a2dismod mpm_prefork && a2enmod mpm_event; \
+	{ \
+		echo 'KeepAliveTimeout 620'; \
+		echo 'MaxKeepAliveRequests 1000000'; \
+	} > /etc/apache2/conf-enabled/moonrhythm.conf
+
 VOLUME /var/www/html
 
 CMD ["apache2-foreground"]
