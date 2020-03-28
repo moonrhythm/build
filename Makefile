@@ -1,4 +1,4 @@
-MAKEFLAGS += -j2
+MAKEFLAGS += -j4
 
 generate:
 	go run .
