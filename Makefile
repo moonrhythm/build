@@ -1,5 +1,3 @@
-MAKEFLAGS += -j2
-
 generate:
 	go run .
 
