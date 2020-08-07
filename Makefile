@@ -1,3 +1,5 @@
+MAKEFLAGS += -j10
+
 generate:
 	go run .
 
