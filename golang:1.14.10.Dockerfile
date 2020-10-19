@@ -1,4 +1,4 @@
-FROM golang:1.14.9
+FROM golang:1.14.10
 
 RUN apt update && apt install -y \
 	libbrotli-dev \
