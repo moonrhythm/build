@@ -12,3 +12,6 @@ local: generate
 
 all:
 	make $(basename $(wildcard *.Dockerfile))
+
+golang:
+	make $(basename $(wildcard golang:*.Dockerfile))
