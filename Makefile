@@ -7,8 +7,11 @@ local: generate
 	cloud-build-local --dryrun=false --push .
 
 %: %.Dockerfile
-	docker build --pull -t gcr.io/moonrhythm-containers/$@ -f $< .
-	docker push gcr.io/moonrhythm-containers/$@
+	buildctl build \
+		--frontend dockerfile.v0 \
+		--local dockerfile=. \
+		--opt filename=$< \
+		--output type=image,name=gcr.io/moonrhythm-containers/$@,push=true
 
 all:
 	make $(basename $(wildcard *.Dockerfile))
