@@ -13,7 +13,7 @@ local: generate
 	# 	--local dockerfile=. \
 	# 	--opt filename=$< \
 	# 	--output type=image,name=gcr.io/moonrhythm-containers/$@,push=true
-	docker build -f $< -t gcr.io/moonrhythm-containers/$@ .
+	docker build --pull -f $< -t gcr.io/moonrhythm-containers/$@ .
 	docker push gcr.io/moonrhythm-containers/$@
 
 all:
