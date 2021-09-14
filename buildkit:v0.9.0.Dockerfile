@@ -1,2 +1,2 @@
-FROM moby/buildkit:v0.8.3
+FROM moby/buildkit:v0.9.0
 RUN apk add --no-cache openssh
