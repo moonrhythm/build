@@ -23,4 +23,4 @@ golang:
 	make $(basename $(wildcard golang:*.Dockerfile))
 
 mirror:
-	cat mirror.txt | xargs -I {} -n1 sh -c 'docker pull {} && docker tag {} gcr.io/moonrhythm-containers/r/{} && docker push gcr.io/moonrhythm-containers/r/{}'
+	cat mirror.txt | xargs -I {} -n1 sh -c 'docker pull {} && docker tag {} asia.gcr.io/moonrhythm-containers/r/{} && docker push asia.gcr.io/moonrhythm-containers/r/{}'
