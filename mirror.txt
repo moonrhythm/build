@@ -1,0 +1,2 @@
+node:12-alpine
+golang:1.17
