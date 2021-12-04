@@ -1,0 +1,107 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, gcr.io/moonrhythm-containers/alpine, -f, alpine.Dockerfile,
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.12', -f, 'alpine:3.12.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.13', -f, 'alpine:3.13.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.14', -f, 'alpine:3.14.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/alpine:3.15', -f, 'alpine:3.15.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/buildkit:v0.9.0', -f, 'buildkit:v0.9.0.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.16-alpine', -f,
+    'golang:1.16-alpine.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.16.11-alpine',
+    -f, 'golang:1.16.11-alpine.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.16.11-alpine3.15',
+    -f, 'golang:1.16.11-alpine3.15.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.16.11', -f, 'golang:1.16.11.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.17-alpine', -f,
+    'golang:1.17-alpine.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.17.4-alpine', -f,
+    'golang:1.17.4-alpine.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:1.17.4-alpine3.15',
+    -f, 'golang:1.17.4-alpine3.15.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine', -f, 'golang:alpine.Dockerfile',
+    .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine3.12', -f,
+    'golang:alpine3.12.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine3.13', -f,
+    'golang:alpine3.13.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine3.14', -f,
+    'golang:alpine3.14.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/golang:alpine3.15', -f,
+    'golang:alpine3.15.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.3.13-apache', -f,
+    'php:7.3.13-apache.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.3.13-fpm-alpine',
+    -f, 'php:7.3.13-fpm-alpine.Dockerfile', .]
+  waitFor: ['-']
+- name: gcr.io/cloud-builders/docker
+  args: [build, --pull, -t, 'gcr.io/moonrhythm-containers/php:7.4.1-apache', -f, 'php:7.4.1-apache.Dockerfile',
+    .]
+  waitFor: ['-']
+images:
+- gcr.io/moonrhythm-containers/alpine
+- gcr.io/moonrhythm-containers/alpine:3.12
+- gcr.io/moonrhythm-containers/alpine:3.13
+- gcr.io/moonrhythm-containers/alpine:3.14
+- gcr.io/moonrhythm-containers/alpine:3.15
+- gcr.io/moonrhythm-containers/buildkit:v0.9.0
+- gcr.io/moonrhythm-containers/golang:1.16-alpine
+- gcr.io/moonrhythm-containers/golang:1.16.11-alpine
+- gcr.io/moonrhythm-containers/golang:1.16.11-alpine3.15
+- gcr.io/moonrhythm-containers/golang:1.16.11
+- gcr.io/moonrhythm-containers/golang:1.17-alpine
+- gcr.io/moonrhythm-containers/golang:1.17.4-alpine
+- gcr.io/moonrhythm-containers/golang:1.17.4-alpine3.15
+- gcr.io/moonrhythm-containers/golang:alpine
+- gcr.io/moonrhythm-containers/golang:alpine3.12
+- gcr.io/moonrhythm-containers/golang:alpine3.13
+- gcr.io/moonrhythm-containers/golang:alpine3.14
+- gcr.io/moonrhythm-containers/golang:alpine3.15
+- gcr.io/moonrhythm-containers/php:7.3.13-apache
+- gcr.io/moonrhythm-containers/php:7.3.13-fpm-alpine
+- gcr.io/moonrhythm-containers/php:7.4.1-apache
