@@ -1,4 +1,4 @@
-MAKEFLAGS += -j2
+MAKEFLAGS += -j8
 
 generate:
 	go run .
@@ -8,7 +8,7 @@ local: generate
 
 %: %.Dockerfile
 	# buildkit can not push image to gcr when duplicate but different tag
-	mbuild build \
+	buildctl build \
 		--frontend dockerfile.v0 \
 		--local dockerfile=. \
 		--opt filename=$< \
@@ -21,6 +21,9 @@ all:
 
 golang:
 	make $(basename $(wildcard golang:*.Dockerfile))
+
+alpine:
+	make $(basename $(wildcard alpine:*.Dockerfile))
 
 mirror:
 	cat mirror.txt | xargs -I {} -n1 sh -c 'docker pull {} && docker tag {} asia.gcr.io/moonrhythm-containers/r/{} && docker push asia.gcr.io/moonrhythm-containers/r/{}'

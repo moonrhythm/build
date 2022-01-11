@@ -1,4 +1,5 @@
 node:12-alpine
 node:14
+node:16
 golang:1.17
-golang:1.17.0
+golang:1.17.6
