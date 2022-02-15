@@ -3,3 +3,4 @@ node:14
 node:16
 golang:1.17
 golang:1.17.6
+golang:1.17.7
