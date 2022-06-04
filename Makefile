@@ -26,4 +26,4 @@ alpine:
 	make $(basename $(wildcard alpine:*.Dockerfile))
 
 mirror:
-	cat mirror.txt | xargs -I {} -n1 sh -c 'docker pull {} && docker tag {} asia.gcr.io/moonrhythm-containers/r/{} && docker push asia.gcr.io/moonrhythm-containers/r/{}'
+	cat mirror.txt | xargs -I {} -n1 -P8 sh -c 'docker pull {} && docker tag {} asia.gcr.io/moonrhythm-containers/r/{} && docker push asia.gcr.io/moonrhythm-containers/r/{}'
